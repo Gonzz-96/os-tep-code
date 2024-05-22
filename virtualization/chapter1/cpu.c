@@ -1,0 +1,21 @@
+#include <unistd.h>
+#include <stdio.h>
+
+#include "common.h"
+
+int main(int argc, char *argv[]) {
+
+    if (argc < 2) {
+        fprintf(stderr, "usage: cpu <string>\n");
+        return 1;
+    }
+
+    char *str = argv[1];
+    while (1) {
+        spin(1);
+        printf("%s\n", str);
+    }
+
+    return 0;
+}
+
